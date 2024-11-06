@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" name="quantity1" id="q1">
+    <button class="button" onclick="pi(1)">pi</button>
+    <input type="number" name="quantity2" id="q2">
+    <button class="button" onclick="pi(2)">pi</button>
+    <br>
+    <button class="button" onclick="add()">+</button>
+    <button class="button" onclick="subtract()">-</button>
+    <button class="button" onclick="multiply()">x</button>
+    <button class="button" onclick="divide()">/</button>
+    <button class="button" onclick="mod()">%</button>
+    <button class="button" onclick="pow()">^</button>
+    <br><button class="button" onclick="clear()">C</button>
+    <hr>
+    <input type="file" id="fileToLoad">
+    <button class="button" onclick="checkFileProperty()">Load Selected</button>
+    <p id="Message"></p>
+    <textarea class="textinput" id="fileInput" cols="40" rows="2"></textarea>
+    <hr>
+    <h3>Output:</h3>
+    <p id="output"></p>
+    <script src="saveText.js"></script>
+    <script src="readTextArea.js"></script>
+    <script src="basicCalcs.js"></script>
+</body>
+</html>
