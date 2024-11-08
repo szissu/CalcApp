@@ -1,14 +1,19 @@
-function makeArr(){
-    let info = document.getElementById('fileInput').innerHTML;
+let arr; 
 
-    let infoArr = info.split("\n");
-    for(let i = 0; i < infoArr.length; i++){
-        document.getElementById("output").innerHTML +=  infoArr[i];
+function makeArr(){
+    let info = document.getElementById('fileInput').value;
+    let arrTemp = info.split("\n");
+    let arrNum = [];
+    for (let i = 0; i < arrTemp.length; i++){
+        arrNum.push(parseFloat(arrTemp[i]));
     }
+    arr = arrNum.sort(function(a, b) {
+        return a - b;
+      });
+      document.getElementById("output").innerHTML = arr;
 }
 
 function mean(){
-    let arr = [1, 2, 3];
     let total = 0;
     for (let i = 0; i < arr.length; i++){
         total += arr[i];
@@ -17,7 +22,6 @@ function mean(){
 }
 
 function median(){
-    let arr = [1, 2, 3];
     let med;
     if (arr.length%2 == 0){
         med = (arr[arr.length/2-1]+arr[(arr.length/2)])/2
@@ -27,25 +31,29 @@ function median(){
     document.getElementById("output").innerHTML = med;
 }
 
-function mode(){
-    list = [1,2,3,4,5,6,7,7]
-    var empty = []
-    i = 0
-    max = 0
-    while (i<list.length){
-    
-       if (list[i]==list[i+1]){
-           empty = list[i] 
-       i += 1
-        }else{
-          i +=1
-          }
-    
-     }
+function mode() {
+    let frequency = {};
+    let maxCount = 0;
+    let modeValue = null;
+
+    // Count the frequency of each number  
+    for (let num of arr) {
+        frequency[num] = (frequency[num] || 0) + 1; // Increment count  
+    }
+
+    // Find the number with the highest frequency  
+    for (let num in frequency) {
+        if (frequency[num] > maxCount) {
+            maxCount = frequency[num];
+            modeValue = num; // Set mode value  
+        }
+    }
+
+    // Output the mode  
+    document.getElementById("output").innerHTML = `Mode: ${modeValue} (Count: ${maxCount})`;
 }
 
 function max(){
-    let arr = [1, 2, 3];
     let top = arr[0];
     for (let i = 1; i < arr.length; i++){
         if(top < arr[i]){
@@ -56,7 +64,6 @@ function max(){
 }
 
 function min(){
-    let arr = [1, 2, 3];
     let bottom = arr[0];
     for (let i = 1; i < arr.length; i++){
         if(bottom > arr[i]){

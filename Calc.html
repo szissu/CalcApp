@@ -17,17 +17,26 @@
     <button class="button" onclick="divide()">/</button>
     <button class="button" onclick="mod()">%</button>
     <button class="button" onclick="pow()">^</button>
-    <br><button class="button" onclick="clear()">C</button>
+    <br>
+    <button class="button" onclick="round()">Round</button>
     <hr>
     <input type="file" id="fileToLoad">
-    <button class="button" onclick="checkFileProperty()">Load Selected</button>
+    <button class="button" onclick="checkFileProperty();">Load Selected</button>
+    
     <p id="Message"></p>
     <textarea class="textinput" id="fileInput" cols="40" rows="2"></textarea>
+    <br>
+    <button class="button" onclick="mean();">Mean</button>
+    <button class="button" onclick="median();">Median</button>
+    <button class="button" onclick="mode();">Mode</button>
+    <button class="button" onclick="max();">Max</button>
+    <button class="button" onclick="min();">Min</button>
     <hr>
     <h3>Output:</h3>
     <p id="output"></p>
     <script src="saveText.js"></script>
     <script src="readTextArea.js"></script>
     <script src="basicCalcs.js"></script>
+    <script src="statsCalcs.js"></script>
 </body>
 </html>
